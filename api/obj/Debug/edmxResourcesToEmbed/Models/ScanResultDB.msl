@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="api_result_dbModelStoreContainer" CdmEntityContainer="api_result_dbEntities">
+    <EntitySetMapping Name="Results">
+      <EntityTypeMapping TypeName="api_result_dbModel.Result">
+        <MappingFragment StoreEntitySet="Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RepositoryName" ColumnName="RepositoryName" />
+          <ScalarProperty Name="QueuedAt" ColumnName="QueuedAt" />
+          <ScalarProperty Name="ScanningAt" ColumnName="ScanningAt" />
+          <ScalarProperty Name="FinishedAt" ColumnName="FinishedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

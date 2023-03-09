@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="api_result_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'api_result_db.dbo.Result' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="RepositoryName" Type="varchar" MaxLength="50" />
+          <Property Name="QueuedAt" Type="varchar" MaxLength="50" />
+          <Property Name="ScanningAt" Type="varchar" MaxLength="50" />
+          <Property Name="FinishedAt" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="api_result_dbModelStoreContainer">
+          <EntitySet Name="Result" EntityType="Self.Result" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Result].[id] AS [id], 
+    [Result].[Status] AS [Status], 
+    [Result].[RepositoryName] AS [RepositoryName], 
+    [Result].[QueuedAt] AS [QueuedAt], 
+    [Result].[ScanningAt] AS [ScanningAt], 
+    [Result].[FinishedAt] AS [FinishedAt]
+    FROM [dbo].[Result] AS [Result]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="api_result_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RepositoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="QueuedAt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ScanningAt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FinishedAt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="api_result_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Results" EntityType="Self.Result" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="api_result_dbModelStoreContainer" CdmEntityContainer="api_result_dbEntities">
+          <EntitySetMapping Name="Results">
+            <EntityTypeMapping TypeName="api_result_dbModel.Result">
+              <MappingFragment StoreEntitySet="Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RepositoryName" ColumnName="RepositoryName" />
+                <ScalarProperty Name="QueuedAt" ColumnName="QueuedAt" />
+                <ScalarProperty Name="ScanningAt" ColumnName="ScanningAt" />
+                <ScalarProperty Name="FinishedAt" ColumnName="FinishedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

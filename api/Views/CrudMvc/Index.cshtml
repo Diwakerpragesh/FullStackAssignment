@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Crud_Api_Assignment.Models.Result>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RepositoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QueuedAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScanningAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinishedAt)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RepositoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QueuedAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScanningAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FinishedAt)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
