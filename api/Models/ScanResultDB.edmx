@@ -5,8 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="api_result_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'api_result_db.dbo.Result' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Result">
           <Key>
             <PropertyRef Name="id" />
@@ -19,16 +17,7 @@ warning 6002: The table/view 'api_result_db.dbo.Result' does not have a primary 
           <Property Name="FinishedAt" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="api_result_dbModelStoreContainer">
-          <EntitySet Name="Result" EntityType="Self.Result" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Result].[id] AS [id], 
-    [Result].[Status] AS [Status], 
-    [Result].[RepositoryName] AS [RepositoryName], 
-    [Result].[QueuedAt] AS [QueuedAt], 
-    [Result].[ScanningAt] AS [ScanningAt], 
-    [Result].[FinishedAt] AS [FinishedAt]
-    FROM [dbo].[Result] AS [Result]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Result" EntityType="Self.Result" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -46,7 +35,7 @@ warning 6002: The table/view 'api_result_db.dbo.Result' does not have a primary 
           <Property Name="ScanningAt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="FinishedAt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="api_result_dbEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="api_result_dbEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Results" EntityType="Self.Result" />
         </EntityContainer>
       </Schema>
@@ -54,7 +43,7 @@ warning 6002: The table/view 'api_result_db.dbo.Result' does not have a primary 
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="api_result_dbModelStoreContainer" CdmEntityContainer="api_result_dbEntities">
+        <EntityContainerMapping StorageEntityContainer="api_result_dbModelStoreContainer" CdmEntityContainer="api_result_dbEntities2">
           <EntitySetMapping Name="Results">
             <EntityTypeMapping TypeName="api_result_dbModel.Result">
               <MappingFragment StoreEntitySet="Result">

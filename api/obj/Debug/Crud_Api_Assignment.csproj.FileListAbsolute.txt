@@ -1,4 +1,3 @@
-C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\obj\Debug\Crud_Api_Assignment.csproj.CoreCompileInputs.cache
 C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\bin\Crud_Api_Assignment.dll.config
 C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\bin\Crud_Api_Assignment.dll
 C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\bin\Crud_Api_Assignment.pdb
@@ -80,6 +79,8 @@ C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\bi
 C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\bin\System.Web.WebPages.Razor.xml
 C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\bin\Antlr3.Runtime.pdb
 C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\obj\Debug\Crud_Api_Assignment.csproj.CoreCompileInputs.cache
 C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\obj\Debug\Crud_Api_Assignment.csproj.CopyComplete
 C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\obj\Debug\Crud_Api_Assignment.dll
 C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\obj\Debug\Crud_Api_Assignment.pdb
+C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\obj\Debug\Crud_Api_Assignment.csprojAssemblyReference.cache

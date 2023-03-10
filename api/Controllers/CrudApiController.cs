@@ -12,7 +12,7 @@ namespace AspWebApi_Crud.Controllers
 {
     public class CrudApiController : ApiController
     {
-        api_result_dbEntities db = new api_result_dbEntities();
+        api_result_dbEntities2 db = new api_result_dbEntities2();
 
         [System.Web.Http.HttpGet]
         public IHttpActionResult GetScanResult()
@@ -24,8 +24,8 @@ namespace AspWebApi_Crud.Controllers
         [System.Web.Http.HttpGet]
         public IHttpActionResult GetResultById(int id)
         {
-            var emp = db.Results.Where(model => model.id == id).FirstOrDefault();
-            return Ok(emp);
+            var res = db.Results.Where(model => model.id == id).FirstOrDefault();
+            return Ok(res);
         }
 
         [System.Web.Http.HttpPost]
@@ -40,22 +40,6 @@ namespace AspWebApi_Crud.Controllers
         {
             db.Entry(r).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
-            //var emp = db.Result.Where(model => model.id == e.id).FirstOrDefault();
-            //if(emp != null)
-            //{
-            //    emp.id = e.id;
-            //    emp.name = e.name;
-            //    emp.gender = e.gender;
-            //    emp.age = e.age;
-            //    emp.designation = e.designation;
-            //    emp.salary = e.salary;
-            //    db.SaveChanges();
-            //}
-            //else
-            //{
-            //    return NotFound();
-            //}
-
             return Ok();
         }
         [System.Web.Http.HttpDelete]

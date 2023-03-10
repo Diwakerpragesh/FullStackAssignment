@@ -53,7 +53,7 @@ namespace AspWebApi_Crud.Controllers
         }
         public ActionResult Details(int id)
         {
-            Result e = null;
+            Result r = null;
             client.BaseAddress = new Uri("http://localhost:62685/api/CrudApi");
             var response = client.GetAsync("CrudApi?id=" + id.ToString());
             response.Wait();
@@ -63,13 +63,13 @@ namespace AspWebApi_Crud.Controllers
             {
                 var display = test.Content.ReadAsAsync<Result>();
                 display.Wait();
-                e = display.Result;
+                r = display.Result;
             }
-            return View(e);
+            return View(r);
         }
         public ActionResult Edit(int id)
         {
-            Result e = null;
+            Result r = null;
             client.BaseAddress = new Uri("http://localhost:62685/api/CrudApi");
             var response = client.GetAsync("CrudApi?id=" + id.ToString());
             response.Wait();
@@ -79,15 +79,15 @@ namespace AspWebApi_Crud.Controllers
             {
                 var display = test.Content.ReadAsAsync<Result>();
                 display.Wait();
-                e = display.Result;
+                r = display.Result;
             }
-            return View(e);
+            return View(r);
         }
         [HttpPost]
-        public ActionResult Edit(Result e)
+        public ActionResult Edit(Result r)
         {
             client.BaseAddress = new Uri("http://localhost:62685/api/CrudApi");
-            var response = client.PutAsJsonAsync<Result>("CrudApi", e);
+            var response = client.PutAsJsonAsync<Result>("CrudApi", r);
             response.Wait();
 
             var test = response.Result;
@@ -100,7 +100,7 @@ namespace AspWebApi_Crud.Controllers
         }
         public ActionResult Delete(int id)
         {
-            Result e = null;
+            Result r = null;
             client.BaseAddress = new Uri("http://localhost:62685/api/CrudApi");
             var response = client.GetAsync("CrudApi?id=" + id.ToString());
             response.Wait();
@@ -110,9 +110,9 @@ namespace AspWebApi_Crud.Controllers
             {
                 var display = test.Content.ReadAsAsync<Result>();
                 display.Wait();
-                e = display.Result;
+                r = display.Result;
             }
-            return View(e);
+            return View(r);
         }
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
