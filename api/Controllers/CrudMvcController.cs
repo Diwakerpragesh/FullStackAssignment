@@ -130,6 +130,25 @@ namespace AspWebApi_Crud.Controllers
             return View("Delete");
         }
 
+        public ActionResult Search(string repo)
+        {
+            Result r = null;
+            client.BaseAddress = new Uri("http://localhost:62685/api/CrudApi");
+            var response = client.GetAsync("CrudApi?repo=" + repo);
+            response.Wait();
+
+            var test = response.Result;
+            if (test.IsSuccessStatusCode)
+            {
+                var display = test.Content.ReadAsAsync<Result>();
+                display.Wait();
+                r = display.Result;
+            }
+            return View(r);
+        }
+
+
+
 
     }
 }

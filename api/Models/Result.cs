@@ -14,11 +14,12 @@ namespace Crud_Api_Assignment.Models
     
     public partial class Result
     {
-        public int id { get; set; }
-        public string Status { get; set; }
+        public int Id { get; set; }
         public string RepositoryName { get; set; }
+        public string Status { get; set; }
         public string QueuedAt { get; set; }
         public string ScanningAt { get; set; }
         public string FinishedAt { get; set; }
+        public string Findings { get; set; }
     }
 }

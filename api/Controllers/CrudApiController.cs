@@ -12,7 +12,7 @@ namespace AspWebApi_Crud.Controllers
 {
     public class CrudApiController : ApiController
     {
-        api_result_dbEntities2 db = new api_result_dbEntities2();
+        api_result_dbEntities3 db = new api_result_dbEntities3();
 
         [System.Web.Http.HttpGet]
         public IHttpActionResult GetScanResult()
@@ -24,7 +24,13 @@ namespace AspWebApi_Crud.Controllers
         [System.Web.Http.HttpGet]
         public IHttpActionResult GetResultById(int id)
         {
-            var res = db.Results.Where(model => model.id == id).FirstOrDefault();
+            var res = db.Results.Where(model => model.Id == id).FirstOrDefault();
+            return Ok(res);
+        }
+        [System.Web.Http.HttpGet]
+        public IHttpActionResult GetResultByRepo(string repo)
+        {
+            var res = db.Results.Where(model => model.RepositoryName.Equals(repo)).FirstOrDefault();
             return Ok(res);
         }
 
@@ -45,7 +51,7 @@ namespace AspWebApi_Crud.Controllers
         [System.Web.Http.HttpDelete]
         public IHttpActionResult RepoDelete(int id)
         {
-            var emp = db.Results.Where(model => model.id == id).FirstOrDefault();
+            var emp = db.Results.Where(model => model.Id == id).FirstOrDefault();
             db.Entry(emp).State = System.Data.Entity.EntityState.Deleted;
             db.SaveChanges();
             return Ok();

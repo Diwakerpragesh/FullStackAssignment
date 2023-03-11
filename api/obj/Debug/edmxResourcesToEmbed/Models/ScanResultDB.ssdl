@@ -2,14 +2,15 @@
 <Schema Namespace="api_result_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Result">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="Status" Type="varchar" MaxLength="50" />
-    <Property Name="RepositoryName" Type="varchar" MaxLength="50" />
-    <Property Name="QueuedAt" Type="varchar" MaxLength="50" />
-    <Property Name="ScanningAt" Type="varchar" MaxLength="50" />
-    <Property Name="FinishedAt" Type="varchar" MaxLength="50" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="RepositoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="QueuedAt" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScanningAt" Type="nvarchar" MaxLength="50" />
+    <Property Name="FinishedAt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Findings" Type="nvarchar" MaxLength="4000" />
   </EntityType>
   <EntityContainer Name="api_result_dbModelStoreContainer">
     <EntitySet Name="Result" EntityType="Self.Result" Schema="dbo" store:Type="Tables" />

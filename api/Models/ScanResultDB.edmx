@@ -7,14 +7,15 @@
       <Schema Namespace="api_result_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Result">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="Status" Type="varchar" MaxLength="50" />
-          <Property Name="RepositoryName" Type="varchar" MaxLength="50" />
-          <Property Name="QueuedAt" Type="varchar" MaxLength="50" />
-          <Property Name="ScanningAt" Type="varchar" MaxLength="50" />
-          <Property Name="FinishedAt" Type="varchar" MaxLength="50" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="RepositoryName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="QueuedAt" Type="nvarchar" MaxLength="50" />
+          <Property Name="ScanningAt" Type="nvarchar" MaxLength="50" />
+          <Property Name="FinishedAt" Type="nvarchar" MaxLength="50" />
+          <Property Name="Findings" Type="nvarchar" MaxLength="4000" />
         </EntityType>
         <EntityContainer Name="api_result_dbModelStoreContainer">
           <EntitySet Name="Result" EntityType="Self.Result" Schema="dbo" store:Type="Tables" />
@@ -26,16 +27,17 @@
       <Schema Namespace="api_result_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Result">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="RepositoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="QueuedAt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ScanningAt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FinishedAt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="RepositoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QueuedAt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ScanningAt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FinishedAt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Findings" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="api_result_dbEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="api_result_dbEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Results" EntityType="Self.Result" />
         </EntityContainer>
       </Schema>
@@ -43,16 +45,17 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="api_result_dbModelStoreContainer" CdmEntityContainer="api_result_dbEntities2">
+        <EntityContainerMapping StorageEntityContainer="api_result_dbModelStoreContainer" CdmEntityContainer="api_result_dbEntities3">
           <EntitySetMapping Name="Results">
             <EntityTypeMapping TypeName="api_result_dbModel.Result">
               <MappingFragment StoreEntitySet="Result">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="RepositoryName" ColumnName="RepositoryName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="QueuedAt" ColumnName="QueuedAt" />
                 <ScalarProperty Name="ScanningAt" ColumnName="ScanningAt" />
                 <ScalarProperty Name="FinishedAt" ColumnName="FinishedAt" />
+                <ScalarProperty Name="Findings" ColumnName="Findings" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

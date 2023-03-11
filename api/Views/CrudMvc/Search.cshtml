@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Crud_Api_Assignment.Models.Result>
+
+
+
+<link href="../Content/StyleSheet.css" rel="stylesheet" />
+<h2>Search Result</h2>
+@using (Html.BeginForm("Details", "CrudMvc", FormMethod.Get))
+{
+    <div>
+        <text>Search By Repo Name : </text><input type="text" name="1" />&nbsp;
+        <input type="submit" value="Search" id="btnSubmit" />
+    </div>
+}
+
