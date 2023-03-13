@@ -11,9 +11,10 @@ namespace AspWebApi_Crud.Controllers
 {
     public class CrudMvcController : Controller
     {
+        api_result_dbEntities3 db = new api_result_dbEntities3();
         // GET: CrudMvc
         HttpClient client = new HttpClient();
-        public ActionResult Index()
+        public ActionResult Index(String searchString)
         {
             List<Result> repo_list = new List<Result>();
             client.BaseAddress = new Uri("http://localhost:62685/api/CrudApi");
@@ -21,14 +22,15 @@ namespace AspWebApi_Crud.Controllers
             response.Wait();
 
             var test = response.Result;
-            if (test.IsSuccessStatusCode)
-            {
-                var display = test.Content.ReadAsAsync<List<Result>>();
-                display.Wait();
-                repo_list = display.Result;
-            }
 
-            return View(repo_list);
+            var res = from m in db.Results
+                      select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                res = res.Where(model => model.RepositoryName.Contains(searchString));
+            }
+            return View(res.ToList());   
         }
 
         public ActionResult Create()
@@ -130,22 +132,7 @@ namespace AspWebApi_Crud.Controllers
             return View("Delete");
         }
 
-        public ActionResult Search(string repo)
-        {
-            Result r = null;
-            client.BaseAddress = new Uri("http://localhost:62685/api/CrudApi");
-            var response = client.GetAsync("CrudApi?repo=" + repo);
-            response.Wait();
-
-            var test = response.Result;
-            if (test.IsSuccessStatusCode)
-            {
-                var display = test.Content.ReadAsAsync<Result>();
-                display.Wait();
-                r = display.Result;
-            }
-            return View(r);
-        }
+        
 
 
 

@@ -262,7 +262,6 @@
     <Content Include="Views\CrudMvc\Details.cshtml" />
     <Content Include="Views\CrudMvc\Edit.cshtml" />
     <Content Include="Views\CrudMvc\Delete.cshtml" />
-    <Content Include="Views\CrudMvc\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

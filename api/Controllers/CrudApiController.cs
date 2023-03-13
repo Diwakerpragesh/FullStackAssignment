@@ -27,12 +27,6 @@ namespace AspWebApi_Crud.Controllers
             var res = db.Results.Where(model => model.Id == id).FirstOrDefault();
             return Ok(res);
         }
-        [System.Web.Http.HttpGet]
-        public IHttpActionResult GetResultByRepo(string repo)
-        {
-            var res = db.Results.Where(model => model.RepositoryName.Equals(repo)).FirstOrDefault();
-            return Ok(res);
-        }
 
         [System.Web.Http.HttpPost]
         public IHttpActionResult RepoInsert(Result r)
@@ -55,6 +49,12 @@ namespace AspWebApi_Crud.Controllers
             db.Entry(emp).State = System.Data.Entity.EntityState.Deleted;
             db.SaveChanges();
             return Ok();
+        }
+
+        [System.Web.Http.HttpPost]
+        public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
         }
     }
 }

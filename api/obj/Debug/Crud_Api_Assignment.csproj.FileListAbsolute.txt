@@ -83,4 +83,3 @@ C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\ob
 C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\obj\Debug\Crud_Api_Assignment.csproj.CopyComplete
 C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\obj\Debug\Crud_Api_Assignment.dll
 C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\obj\Debug\Crud_Api_Assignment.pdb
-C:\Users\diwaker.pragesh\source\repos\Crud_Api_Assignment\Crud_Api_Assignment\obj\Debug\Crud_Api_Assignment.csprojAssemblyReference.cache

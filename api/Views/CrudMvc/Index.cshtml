@@ -3,9 +3,14 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<p>
-    @Html.ActionLink("Search", "Search")
-</p>
+
+
+<form asp-controller="CrudMvc" asp-action="Search" method="get">
+    <p>
+        Title: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <tr>
         <th>
