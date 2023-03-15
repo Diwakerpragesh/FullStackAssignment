@@ -12,7 +12,7 @@ namespace AspWebApi_Crud.Controllers
 {
     public class CrudApiController : ApiController
     {
-        api_result_dbEntities3 db = new api_result_dbEntities3();
+        api_result_dbEntities4 db = new api_result_dbEntities4();
 
         [System.Web.Http.HttpGet]
         public IHttpActionResult GetScanResult()
@@ -31,6 +31,7 @@ namespace AspWebApi_Crud.Controllers
         [System.Web.Http.HttpPost]
         public IHttpActionResult RepoInsert(Result r)
         {
+         
             db.Results.Add(r);
             db.SaveChanges();
             return Ok();

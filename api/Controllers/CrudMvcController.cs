@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.Serialization.Json;
 using System.Web;
 using System.Web.Mvc;
 
@@ -11,7 +12,7 @@ namespace AspWebApi_Crud.Controllers
 {
     public class CrudMvcController : Controller
     {
-        api_result_dbEntities3 db = new api_result_dbEntities3();
+        api_result_dbEntities4 db = new api_result_dbEntities4();
         // GET: CrudMvc
         HttpClient client = new HttpClient();
         public ActionResult Index(String searchString)
@@ -25,7 +26,7 @@ namespace AspWebApi_Crud.Controllers
 
             var res = from m in db.Results
                       select m;
-
+            
             if (!String.IsNullOrEmpty(searchString))
             {
                 res = res.Where(model => model.RepositoryName.Contains(searchString));

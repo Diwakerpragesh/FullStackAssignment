@@ -13,10 +13,10 @@ namespace Crud_Api_Assignment.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class api_result_dbEntities3 : DbContext
+    public partial class api_result_dbEntities4 : DbContext
     {
-        public api_result_dbEntities3()
-            : base("name=api_result_dbEntities3")
+        public api_result_dbEntities4()
+            : base("name=api_result_dbEntities4")
         {
         }
     

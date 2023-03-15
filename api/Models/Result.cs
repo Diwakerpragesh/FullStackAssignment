@@ -11,15 +11,20 @@ namespace Crud_Api_Assignment.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Result
     {
         public int Id { get; set; }
         public string RepositoryName { get; set; }
         public string Status { get; set; }
-        public string QueuedAt { get; set; }
         public string ScanningAt { get; set; }
         public string FinishedAt { get; set; }
         public string Findings { get; set; }
+
+        [System.ComponentModel.DataAnnotations.Display(Name = "Queued Date")]
+        [System.ComponentModel.DataAnnotations.DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime QueuedAt { get; set; }
     }
 }

@@ -1,7 +1,9 @@
 ﻿@model IEnumerable<Crud_Api_Assignment.Models.Result>
 
+<center><h1>Security Scan Result</h1></center>
+
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button>@Html.ActionLink("Create New", "Create")</button>
 </p>
 
 
@@ -14,13 +16,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Id)
+            @Html.DisplayNameFor(model => model.RepositoryName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RepositoryName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.QueuedAt)
@@ -31,21 +30,21 @@
         <th>
             @Html.DisplayNameFor(model => model.FinishedAt)
         </th>
+
+
         <th></th>
     </tr>
-
     @foreach (var item in Model)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
+                @Html.DisplayFor(modelItem => item.RepositoryName)
             </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RepositoryName)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.QueuedAt)
             </td>
@@ -55,6 +54,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.FinishedAt)
             </td>
+
+            <td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |
@@ -64,3 +65,5 @@
     }
 
 </table>
+
+

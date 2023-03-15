@@ -4,15 +4,15 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RepositoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="QueuedAt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ScanningAt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="FinishedAt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Findings" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="QueuedAt" Type="DateTime" Precision="3" />
   </EntityType>
-  <EntityContainer Name="api_result_dbEntities3" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="api_result_dbEntities4" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Results" EntityType="Self.Result" />
   </EntityContainer>
 </Schema>
